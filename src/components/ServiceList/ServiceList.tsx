@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { IService } from "../../types/IService";
 import { SyntheticEvent, useRef } from "react";
 import { addService } from "../../redux/actions/actions";
-import { Service } from "../Service/Service";
+import { Service } from "./Service/Service";
 
 export const ServiceList = () => {
     const state = useSelector(state => state.serviceList);
