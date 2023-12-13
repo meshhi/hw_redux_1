@@ -6,7 +6,7 @@ interface IAction {
 }
 
 const initialState = [
-    {id: 1, name: 'change glass', price: 1000}
+    {id: 1, name: 'change glass', price: 1000, visible: true},
 ]
 
 export default function serviceListReducer(state = initialState, action : IAction) {
@@ -20,6 +20,14 @@ export default function serviceListReducer(state = initialState, action : IActio
             return [
                 ...state.filter(service => {
                     return service.id != action.payload.id;
+                }),
+            ]
+        case(ActionTypes.FILTER_SERVICE):
+            return [
+                ...state.map(service => {
+                    return {
+                        ...service, visible: service.name.indexOf(action.payload.name) !== -1 ? true : false
+                    };
                 }),
             ]
         default:

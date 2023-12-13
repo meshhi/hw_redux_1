@@ -18,7 +18,8 @@ export const ServiceList = () => {
         if (!nameRef?.current?.value || !priceRef?.current?.value) return;
         dispatch(addService({
             name: nameRef?.current?.value,
-            price: Number(priceRef?.current?.value)
+            price: Number(priceRef?.current?.value),
+            visible: true
         }))
     }
 

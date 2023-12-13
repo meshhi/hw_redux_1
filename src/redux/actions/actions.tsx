@@ -10,3 +10,7 @@ export function addService(args : IAddServiceArgs) {
 export function removeService(id : string) {
     return {type: ActionTypes.REMOVE_SERVICE, payload: {id}}
 }
+
+export function filterService(name : string) {
+    return {type: ActionTypes.FILTER_SERVICE, payload: {name}}
+}
